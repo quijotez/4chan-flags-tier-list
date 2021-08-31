@@ -11,6 +11,10 @@ Tier list of 4chan flags, enjoy.
 * export as an image
 * everything stays in your browser, nothing is uploaded to the server: you keep your data
 
+## To-do:
+* Add custom title to the tier list
+* Host the website somewhere
+
 ## Launching
 
 ```shell
