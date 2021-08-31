@@ -3,7 +3,7 @@
     <head>
         <title>TierListMaker</title>
         <meta charset="utf-8">
-        <meta name="author" content="Alexandre SuperFola Plateau">
+        <meta name="author" content="quijotez">
         <meta name="description" content="Tier List maker">
         <meta name="keywords" content="tier list, online, ranking">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,26 +14,29 @@
 
         <link href="/assets/css/colors.css" rel="stylesheet">
         <link href="/assets/css/custom.css" rel="stylesheet">
+        <link href="/assets/css/flags.css" rel="stylesheet">
 
         <script src="/assets/js/html2canvas.min.js" defer></script>
         <script src="/assets/js/utils.js" defer></script>
         <script src="/assets/js/export2image.js" defer></script>
         <script src="/assets/js/saveModal.js" defer></script>
         <script src="/assets/js/tier-table.js" defer></script>
+		<script src="/assets/js/updateSlider.js" defer></script>
+		<script src="/assets/js/insertFlags.js" defer></script>
         <script src="/assets/js/main.js" defer></script>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">TierListMaker</a>
+                <a class="navbar-brand" href="#">TierListMaker<sup>4chan flags edition</sup></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="https://paypal.me/lexplt">
-                                Support me
+                            <a class="nav-link" href="https://github.com/SuperFola/TierListMaker">
+                                Forked from @SuperFola/TierListMaker
                                 &nbsp;
                                 <span class="icon">
                                     <i class="fas fa-external-link-alt"></i>
@@ -41,7 +44,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://github.com/SuperFola/TierListMaker">
+                            <a class="nav-link" href="https://github.com/quijotez/TierListMaker">
                                 Source code
                                 &nbsp;
                                 <span class="icon">
@@ -70,7 +73,8 @@
                                 </th>
                             </tr>
                         </thead>
-                        <tbody id="tableBody"></tbody>
+                        <tbody id="tableBody">
+						</tbody>
                     </table>
                 </div>
                 <div class="w-max-25 p-2">
@@ -119,5 +123,11 @@
                 </div>
             </div>
         </div>
+			<input type="range" min="1" max="7" value="2" class="slider" id="flagViewSlider" onchange="updateSlider(this.value)">
+			<span id="flagViewSliderValue">2</span>
+			<div id="info">Hover over a flag to see the country name.<br><sup>Azerbaijan, Armenia, Cyprus, Georgia, Kazakhstan, United States Minor Outlying Islands, Russian Federation & Turkey originally belonged to two continents, but I assigned them to only one, maybe wrongly.<sup></div>
+		</div>
+		<div class="continentList">
+		</div>
     </body>
 </html>

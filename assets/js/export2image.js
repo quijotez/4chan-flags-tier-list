@@ -1,4 +1,5 @@
 function export2image(evt) {
+	window.scrollTo(0, 0);
     const element = document.getElementById('tableBody');
 
     const posX = 0;
@@ -27,13 +28,14 @@ function export2image(evt) {
         outputContext.putImageData(idata, 0, 0);
 
         let list = document.getElementById('imageList');
-        let item = document.createElement('li');
-        let child = document.createElement('a');
-        child.setAttribute('href', outputCanvas.toDataURL());
-        child.setAttribute('download', 'tierlist.png');
-        child.innerText = `TierList no ${list.children.length + 1}`;
-        item.appendChild(child);
-
-        list.appendChild(item);
+        let li = document.createElement('li');
+		let img = document.createElement('img');
+		img.src = outputCanvas.toDataURL();
+		img.style.height="auto";
+		img.style.width="100px";
+		img.style.margin="3px";
+		img.style.backgroundColor="black";
+		li.appendChild(img);
+        list.appendChild(li);
     });
 }

@@ -159,10 +159,18 @@ function generateTable(identifier, count=-1) {
                     });
                 });
             } else {
-                const id = ev.dataTransfer.getData('text');
-                const el = document.getElementById(id);
-                const drop_zone = ev.target;
-                drop_zone.appendChild(el);
+				try {
+					const id = ev.dataTransfer.getData('text');
+					const el = document.getElementById(id);
+					const drop_zone = ev.target;
+					drop_zone.appendChild(el);
+				}
+				catch (TypeError) {
+					const id = ev.dataTransfer.getData('text').split("/").pop().replace(".gif","");
+					const el = document.getElementById(id);
+					const drop_zone = ev.target;
+					drop_zone.appendChild(el);
+				}
             }
         }, false);
 
@@ -176,4 +184,5 @@ function generateTable(identifier, count=-1) {
 
         table_body.appendChild(row);
     });
+	insertFlags();
 }

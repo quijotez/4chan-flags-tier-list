@@ -1,0 +1,61 @@
+div.continentList{
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(calc(100% / 2), 1fr));
+	grid-auto-flow: dense;
+}
+div.continent{
+	grid-column-end: span 1;
+	padding: 50px 50px;
+	border: 1px solid black;
+}
+
+.continent.eu{order: 1;}
+.continent.na{order: 2;}
+.continent.as{order: 3;}
+.continent.sa{order: 4;}
+.continent.af{order: 5;}
+.continent.oc{order: 6;}
+.continent.an{order: 7;}
+
+body{
+	background-color: #eef2ff;
+}
+.bg-light{
+	background-color: #d6daf0!important;
+}
+
+div.continent header{
+	font-weight: bold;
+}
+div.countryList{	
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(1px, 1fr));
+	gap: 9px;
+	grid-auto-flow: dense;
+}
+div.country{
+	grid-column-end: span 2;
+}
+div.country img{
+	border: 1px solid black;
+}
+tbody#tableBody td img{
+	margin: 1px;
+}
+
+div {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+input.slider{
+	-webkit-touch-callout: auto;
+    -webkit-user-select: auto;
+    -khtml-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
+}
