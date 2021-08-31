@@ -14,7 +14,7 @@ Tier list of 4chan flags, enjoy.
 ## Launching
 
 ```shell
-git clone https://github.com/SuperFola/TierListMaker.git
+git clone https://github.com/quijotez/TierListMaker.git
 cd TierListMaker/
 python -m http.server
 ```
