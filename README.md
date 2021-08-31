@@ -1,6 +1,6 @@
-# TierListMaker
+# 4chan-flags-tier-list
 
-A fun side-project to make tier lists in your browser.
+Tier list of 4chan flags, enjoy.
 
 ## Features
 
