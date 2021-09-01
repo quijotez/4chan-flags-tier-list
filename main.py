@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+from app import app
+from flask import render_template
 app = Flask(__name__, template_folder='.')
 @app.route("/") 
 def index():
